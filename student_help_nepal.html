@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Help Nepal — कक्षा ६ देखि १२ सम्मका विद्यार्थीका लागि नोट्स, प्रश्नपत्र र अध्ययन सामग्री।">
+  <title>Student Help Nepal | Learn. Practice. Succeed.</title>
+  <style>
+    :root{
+      --navy:#101b3f;--blue:#3157d5;--cyan:#39c6d8;--ink:#18213b;
+      --muted:#68738c;--paper:#f5f7fc;--white:#fff;--line:#e6eaf3;
+      --shadow:0 18px 50px rgba(25,42,91,.10);--radius:22px
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,"Noto Sans Devanagari",system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    a{color:inherit;text-decoration:none} button,input,select{font:inherit}
+    .container{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:850;color:var(--navy);font-size:1.08rem}
+    .brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-size:1.35rem;box-shadow:0 8px 20px #3157d544}
+    .navlinks{display:flex;gap:25px;color:#48536e;font-weight:650;font-size:.94rem}
+    .navlinks a:hover{color:var(--blue)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .lang,.menu-btn{border:1px solid var(--line);background:white;border-radius:12px;padding:9px 13px;font-weight:750;cursor:pointer;color:var(--navy)}
+    .menu-btn{display:none}
+    .hero{position:relative;overflow:hidden;padding:78px 0 70px;background:radial-gradient(circle at 85% 20%,#3bc8d833,transparent 27%),linear-gradient(125deg,#101b3f 0%,#1b3476 65%,#2854b5 100%);color:white}
+    .hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #ffffff20;border-radius:50%;right:-110px;bottom:-280px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff06}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:45px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid #ffffff35;background:#ffffff12;border-radius:99px;font-size:.85rem;font-weight:700;color:#d9faff}
+    h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;letter-spacing:-.04em;margin:20px 0}
+    .gradient-text{background:linear-gradient(90deg,#8deafa,#d4f9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{color:#d7e0fa;font-size:1.08rem;max-width:590px;margin:0 0 28px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:0;border-radius:13px;padding:13px 19px;font-weight:800;cursor:pointer;transition:.2s}
+    .btn-primary{background:linear-gradient(100deg,#45d0df,#75e2e9);color:#102044;box-shadow:0 10px 25px #31c5d533}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px #31c5d555}
+    .btn-ghost{border:1px solid #ffffff55;color:white;background:#ffffff12;margin-left:8px}
+    .hero-card{background:linear-gradient(145deg,#ffffff20,#ffffff0b);border:1px solid #ffffff35;border-radius:28px;padding:25px;box-shadow:0 25px 65px #07133255;backdrop-filter:blur(10px);transform:rotate(1.5deg)}
+    .hero-card-top{display:flex;justify-content:space-between;align-items:center;color:#dce7ff;font-weight:750}
+    .book-stack{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
+    .book{min-height:115px;border-radius:18px;padding:16px;color:#14234c;display:flex;flex-direction:column;justify-content:space-between;font-weight:850}
+    .book span:first-child{font-size:1.7rem}.book small{font-size:.77rem;opacity:.8}
+    .book:nth-child(1){background:#b9eff1}.book:nth-child(2){background:#f8d9a4}.book:nth-child(3){background:#d6d0ff}.book:nth-child(4){background:#f5c8d9}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:-28px;position:relative;z-index:3}
+    .stat{background:white;border:1px solid var(--line);border-radius:18px;padding:19px;text-align:center;box-shadow:var(--shadow)}
+    .stat strong{display:block;font-size:1.55rem;color:var(--blue)}.stat span{color:var(--muted);font-size:.88rem;font-weight:650}
+    section{padding:76px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 34px}
+    .kicker{color:var(--blue);font-weight:850;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em}
+    h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;color:var(--navy);margin:10px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .class-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
+    .class-card{border:1px solid var(--line);background:white;border-radius:17px;padding:18px 8px;text-align:center;cursor:pointer;transition:.2s}
+    .class-card:hover,.class-card.active{border-color:var(--blue);box-shadow:0 10px 25px #3157d51c;transform:translateY(-3px)}
+    .class-card strong{display:block;font-size:1.35rem;color:var(--navy)}.class-card span{font-size:.78rem;color:var(--muted)}
+    .resource-area{background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .toolbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+    .search-wrap{flex:1;min-width:230px;position:relative}
+    .search-wrap input{width:100%;border:1px solid var(--line);border-radius:13px;padding:13px 15px 13px 43px;outline:none;background:#fbfcff}
+    .search-wrap input:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3157d51a}
+    .search-icon{position:absolute;left:15px;top:10px;font-size:1.1rem}
+    select{border:1px solid var(--line);border-radius:13px;padding:12px 14px;background:white;color:var(--ink);outline:none}
+    .resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .resource{border:1px solid var(--line);border-radius:20px;padding:21px;background:white;transition:.2s}
+    .resource:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .resource-icon{width:48px;height:48px;border-radius:15px;background:#eef2ff;display:grid;place-items:center;font-size:1.45rem;margin-bottom:15px}
+    .tag{display:inline-block;background:#eef8fb;color:#187b8c;padding:4px 9px;border-radius:99px;font-size:.72rem;font-weight:800}
+    .resource h3{margin:12px 0 6px;color:var(--navy);font-size:1.08rem}
+    .resource p{color:var(--muted);font-size:.9rem;margin:0 0 15px}
+    .resource a{font-weight:800;color:var(--blue);font-size:.9rem}
+    .empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted);border:1px dashed var(--line);border-radius:18px}
+    .tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+    .tool-card{background:white;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:var(--shadow)}
+    .tool-card h3{margin:0 0 8px;color:var(--navy)}.tool-muted{color:var(--muted);font-size:.9rem;margin:0 0 18px}
+    .clock-face{border-radius:18px;padding:23px;background:linear-gradient(130deg,#101b3f,#3157a9);color:white;text-align:center}
+    .clock-time{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:850;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+    .clock-date{color:#dce7ff;margin-top:4px}.bs-date{font-size:1.12rem;font-weight:800;color:#8deafa;margin-top:10px}
+    .calc{max-width:360px;margin:auto}.calc-display{width:100%;border:1px solid var(--line);border-radius:14px;padding:17px;text-align:right;font-size:1.8rem;font-weight:750;color:var(--navy);background:#f7f9ff;margin-bottom:12px}
+    .calc-keys{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.calc-keys button{border:0;border-radius:12px;padding:14px 8px;background:#eef2ff;color:var(--navy);font-size:1.05rem;font-weight:800;cursor:pointer}.calc-keys button:hover{background:#dce5ff}.calc-keys .operator{background:#dff8fb;color:#087b8a}.calc-keys .equal{background:linear-gradient(100deg,#3157d5,#39c6d8);color:white}.calc-keys .clear{background:#ffe9ec;color:#b4233b}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature{padding:23px;border-radius:20px;background:white;border:1px solid var(--line)}
+    .feature .emoji{font-size:1.7rem}.feature h3{margin:12px 0 5px;color:var(--navy)}.feature p{margin:0;color:var(--muted);font-size:.92rem}
+    .cta{background:linear-gradient(120deg,#172654,#3157a9);border-radius:28px;padding:38px;color:white;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta h2{color:white;margin:0 0 8px}.cta p{margin:0;color:#d8e3ff}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .contact-card{background:white;border:1px solid var(--line);border-radius:20px;padding:25px}
+    .contact-card h3{margin-top:0;color:var(--navy)}.contact-item{padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}
+    .contact-item:last-child{border:0}.contact-item strong{color:var(--ink);display:block}
+    footer{background:#0d1735;color:#cbd5ef;padding:28px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.88rem}
+    .notice{font-size:.8rem;color:#77819a;margin-top:12px}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-card{max-width:480px}.class-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:680px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:white;padding:18px 5%;border-bottom:1px solid var(--line);flex-direction:column;gap:15px}.navlinks.open{display:flex}.menu-btn{display:block}.brand{font-size:.93rem}.hero{padding:58px 0}.hero-grid{gap:30px}.stats{grid-template-columns:1fr;margin-top:-15px}.stat{padding:13px}.class-grid{grid-template-columns:repeat(4,1fr)}.resource-grid,.features,.contact-grid{grid-template-columns:1fr}section{padding:58px 0}.tools-grid{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column;padding:27px}.btn-ghost{margin:10px 0 0}.toolbar select{width:100%}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home"><span class="brand-mark">✦</span><span>Student Help Nepal</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#home" data-ne="गृहपृष्ठ" data-en="Home">गृहपृष्ठ</a>
+      <a href="#classes" data-ne="कक्षा" data-en="Classes">कक्षा</a>
+      <a href="#resources" data-ne="अध्ययन सामग्री" data-en="Resources">अध्ययन सामग्री</a>
+      <a href="#tools" data-ne="उपकरणहरू" data-en="Tools">उपकरणहरू</a>
+      <a href="#about" data-ne="हाम्रोबारे" data-en="About">हाम्रोबारे</a>
+      <a href="#contact" data-ne="सम्पर्क" data-en="Contact">सम्पर्क</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang" id="langBtn" type="button">EN</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" data-ne="✦ विद्यार्थीका लागि निःशुल्क सिकाइ मञ्च" data-en="✦ A learning space for every student">✦ विद्यार्थीका लागि निःशुल्क सिकाइ मञ्च</span>
+        <h1 data-ne="सिकौँ आज,<br><span class='gradient-text'>सफल बनौँ भोलि।</span>" data-en="Learn Today,<br><span class='gradient-text'>Succeed Tomorrow.</span>">सिकौँ आज,<br><span class="gradient-text">सफल बनौँ भोलि।</span></h1>
+        <p data-ne="कक्षा ६ देखि १२ सम्मका नोट्स, पुराना प्रश्नपत्र र उपयोगी अध्ययन सामग्री एउटै ठाउँमा। आफ्नो सिकाइ यात्रा आजै सुरु गरौँ।" data-en="Notes, past question papers and useful study resources for Grades 6–12, all in one place. Start your learning journey today.">कक्षा ६ देखि १२ सम्मका नोट्स, पुराना प्रश्नपत्र र उपयोगी अध्ययन सामग्री एउटै ठाउँमा। आफ्नो सिकाइ यात्रा आजै सुरु गरौँ।</p>
+        <a class="btn btn-primary" href="#resources" data-ne="अध्ययन सामग्री हेर्नुहोस् →" data-en="Explore Resources →">अध्ययन सामग्री हेर्नुहोस् →</a>
+        <a class="btn btn-ghost" href="#classes" data-ne="कक्षा छान्नुहोस्" data-en="Choose a Class">कक्षा छान्नुहोस्</a>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-top"><span data-ne="तपाईंको अध्ययन ड्यासबोर्ड" data-en="Your Study Dashboard">तपाईंको अध्ययन ड्यासबोर्ड</span><span>✧ 2026</span></div>
+        <div class="book-stack">
+          <div class="book"><span>📘</span><small>NOTES &amp; LESSONS</small></div>
+          <div class="book"><span>📝</span><small>PAST PAPERS</small></div>
+          <div class="book"><span>🎯</span><small>MODEL QUESTIONS</small></div>
+          <div class="book"><span>💡</span><small>SKILL BUILDING</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container stats">
+    <div class="stat"><strong>6–12</strong><span data-ne="लक्षित कक्षाहरू" data-en="Grades Covered">लक्षित कक्षाहरू</span></div>
+    <div class="stat"><strong>नेपाली + English</strong><span data-ne="दुई भाषामा सहयोग" data-en="Bilingual Support">दुई भाषामा सहयोग</span></div>
+    <div class="stat"><strong>Anytime</strong><span data-ne="जहिले पनि सिक्नुहोस्" data-en="Learn Anytime">जहिले पनि सिक्नुहोस्</span></div>
+  </div>
+
+  <section id="classes">
+    <div class="container">
+      <div class="section-head"><span class="kicker" data-ne="आफ्नो कक्षा छान्नुहोस्" data-en="Choose your grade">आफ्नो कक्षा छान्नुहोस्</span><h2 data-ne="तपाईंको कक्षा, तपाईंको सिकाइ" data-en="Your Class, Your Learning">तपाईंको कक्षा, तपाईंको सिकाइ</h2><p data-ne="आफ्नो कक्षा छानेर सम्बन्धित अध्ययन सामग्री खोज्नुहोस्।" data-en="Choose your grade to find the learning resources made for you.">आफ्नो कक्षा छानेर सम्बन्धित अध्ययन सामग्री खोज्नुहोस्।</p></div>
+      <div class="class-grid" id="classGrid">
+        <button class="class-card active" data-grade="all"><strong>All</strong><span data-ne="सबै कक्षा" data-en="All grades">सबै कक्षा</span></button>
+        <button class="class-card" data-grade="6"><strong>6</strong><span>Class 6</span></button>
+        <button class="class-card" data-grade="7"><strong>7</strong><span>Class 7</span></button>
+        <button class="class-card" data-grade="8"><strong>8</strong><span>Class 8</span></button>
+        <button class="class-card" data-grade="9"><strong>9</strong><span>Class 9</span></button>
+        <button class="class-card" data-grade="10"><strong>10</strong><span>SEE</span></button>
+        <button class="class-card" data-grade="11"><strong>11</strong><span>Class 11</span></button>
+        <button class="class-card" data-grade="12"><strong>12</strong><span>Class 12</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="resource-area" id="resources">
+    <div class="container">
+      <div class="section-head"><span class="kicker" data-ne="अध्ययन पुस्तकालय" data-en="Study library">अध्ययन पुस्तकालय</span><h2 data-ne="आवश्यक सामग्री खोज्नुहोस्" data-en="Find the Resources You Need">आवश्यक सामग्री खोज्नुहोस्</h2><p data-ne="कक्षा र सामग्रीको प्रकार छानेर खोजी गर्नुहोस्।" data-en="Search by grade and resource type.">कक्षा र सामग्रीको प्रकार छानेर खोजी गर्नुहोस्।</p></div>
+      <div class="toolbar">
+        <div class="search-wrap"><span class="search-icon">⌕</span><input id="searchInput" type="search" placeholder="नोट्स वा विषय खोज्नुहोस्..." aria-label="Search resources"></div>
+        <select id="typeFilter" aria-label="Filter by resource type">
+          <option value="all" data-ne="सबै प्रकार" data-en="All types">सबै प्रकार</option>
+          <option value="notes" data-ne="नोट्स" data-en="Notes">नोट्स</option>
+          <option value="papers" data-ne="पुराना प्रश्नपत्र" data-en="Past papers">पुराना प्रश्नपत्र</option>
+          <option value="model" data-ne="मोडेल प्रश्न" data-en="Model questions">मोडेल प्रश्न</option>
+          <option value="see" data-ne="SEE तयारी" data-en="SEE preparation">SEE तयारी</option>
+        </select>
+      </div>
+      <div class="resource-grid" id="resourceGrid"></div>
+      <p class="notice" data-ne="नोट: अहिले देखाइएका कार्डहरू नमुना हुन्। वास्तविक PDF वा सामग्री थपेपछि मात्र डाउनलोड उपलब्ध हुनेछ।" data-en="Note: These are sample resource cards. Downloads will work after you add your actual PDFs or resource links.">नोट: अहिले देखाइएका कार्डहरू नमुना हुन्। वास्तविक PDF वा सामग्री थपेपछि मात्र डाउनलोड उपलब्ध हुनेछ।</p>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="container">
+      <div class="section-head"><span class="kicker">STUDENT TOOLS</span><h2>समय, नेपाली पात्रो र क्यालकुलेटर</h2><p>विद्यार्थीलाई दैनिक पढाइमा उपयोगी हुने सजिला उपकरणहरू।</p></div>
+      <div class="tools-grid">
+        <article class="tool-card">
+          <h3>🕒 नेपाल समय र नेपाली मिति</h3>
+          <p class="tool-muted">नेपालको स्थानीय समय र आजको विक्रम संवत् मिति।</p>
+          <div class="clock-face"><div class="clock-time" id="nepalClock">--:--:--</div><div class="clock-date" id="englishDate">Loading date…</div><div class="bs-date" id="nepaliDate">नेपाली मिति लोड हुँदैछ…</div></div>
+        </article>
+        <article class="tool-card">
+          <h3>🧮 साधारण क्यालकुलेटर</h3>
+          <p class="tool-muted">जोड, घटाउ, गुणन र भाग गर्नुहोस्।</p>
+          <div class="calc"><input class="calc-display" id="calcDisplay" value="0" aria-label="Calculator display" readonly>
+            <div class="calc-keys">
+              <button class="clear" data-key="C">C</button><button data-key="back">⌫</button><button class="operator" data-key="%">%</button><button class="operator" data-key="/">÷</button>
+              <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button><button class="operator" data-key="*">×</button>
+              <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button><button class="operator" data-key="-">−</button>
+              <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button class="operator" data-key="+">+</button>
+              <button data-key="0">0</button><button data-key="00">00</button><button data-key=".">.</button><button class="equal" data-key="=">=</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><span class="kicker" data-ne="किन Student Help Nepal?" data-en="Why Student Help Nepal?">किन Student Help Nepal?</span><h2 data-ne="विद्यार्थीको सफलताका लागि बनाइएको" data-en="Built to Support Student Success">विद्यार्थीको सफलताका लागि बनाइएको</h2><p data-ne="सजिलो, व्यवस्थित र पहुँचयोग्य अध्ययन सामग्री उपलब्ध गराउने हाम्रो लक्ष्य हो।" data-en="Our goal is to make learning resources simple, organized and accessible.">सजिलो, व्यवस्थित र पहुँचयोग्य अध्ययन सामग्री उपलब्ध गराउने हाम्रो लक्ष्य हो।</p></div>
+      <div class="features">
+        <article class="feature"><span class="emoji">📚</span><h3 data-ne="एकै ठाउँमा सामग्री" data-en="Resources in One Place">एकै ठाउँमा सामग्री</h3><p data-ne="नोट्स, प्रश्नपत्र र अभ्यास सामग्री सजिलै भेट्टाउनुहोस्।" data-en="Find notes, question papers and practice materials easily.">नोट्स, प्रश्नपत्र र अभ्यास सामग्री सजिलै भेट्टाउनुहोस्।</p></article>
+        <article class="feature"><span class="emoji">🌐</span><h3 data-ne="दुई भाषाको सुविधा" data-en="Bilingual Experience">दुई भाषाको सुविधा</h3><p data-ne="नेपाली र अंग्रेजी भाषामा वेबसाइट प्रयोग गर्नुहोस्।" data-en="Use the website in Nepali or English.">नेपाली र अंग्रेजी भाषामा वेबसाइट प्रयोग गर्नुहोस्।</p></article>
+        <article class="feature"><span class="emoji">🎯</span><h3 data-ne="परीक्षा तयारी" data-en="Exam Preparation">परीक्षा तयारी</h3><p data-ne="अभ्यास र मोडेल प्रश्नमार्फत आत्मविश्वास बढाउनुहोस्।" data-en="Build confidence with practice and model questions.">अभ्यास र मोडेल प्रश्नमार्फत आत्मविश्वास बढाउनुहोस्।</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container cta">
+      <div><h2 data-ne="आजै आफ्नो सिकाइ सुरु गर्नुहोस्।" data-en="Start Learning Today.">आजै आफ्नो सिकाइ सुरु गर्नुहोस्।</h2><p data-ne="सही अभ्यास र निरन्तरताले सफलता नजिक ल्याउँछ।" data-en="Consistent practice brings your goals closer.">सही अभ्यास र निरन्तरताले सफलता नजिक ल्याउँछ।</p></div>
+      <a class="btn btn-primary" href="#classes" data-ne="कक्षा छान्नुहोस् →" data-en="Choose Your Grade →">कक्षा छान्नुहोस् →</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head"><span class="kicker" data-ne="सम्पर्क" data-en="Get in touch">सम्पर्क</span><h2 data-ne="हामीसँग जोडिनुहोस्" data-en="Connect With Us">हामीसँग जोडिनुहोस्</h2><p data-ne="सुझाव, प्रश्न वा सामग्री पठाउन हामीलाई सम्पर्क गर्नुहोस्।" data-en="Contact us with suggestions, questions or study materials.">सुझाव, प्रश्न वा सामग्री पठाउन हामीलाई सम्पर्क गर्नुहोस्।</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><h3 data-ne="सम्पर्क विवरण" data-en="Contact Details">सम्पर्क विवरण</h3>
+          <div class="contact-item"><strong>📞 Phone</strong><a href="tel:9747309681">9747309681</a> · <a href="https://wa.me/9779747309681" target="_blank" rel="noopener">WhatsApp: 9747309681</a></div>
+          <div class="contact-item"><strong>✉️ Email</strong><a href="mailto:rajendramahara101@gmail.com">rajendramahara101@gmail.com</a></div>
+          <div class="contact-item"><strong>🌍 Website</strong>Student Help Nepal</div>
+        </div>
+        <div class="contact-card"><h3 data-ne="सन्देश पठाउनुहोस्" data-en="Send a Message">सन्देश पठाउनुहोस्</h3>
+          <form id="contactForm">
+            <label for="visitorName" data-ne="तपाईंको नाम" data-en="Your name">तपाईंको नाम</label>
+            <input id="visitorName" required placeholder="Name" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:6px 0 14px">
+            <label for="visitorMessage" data-ne="सन्देश" data-en="Message">सन्देश</label>
+            <input id="visitorMessage" required placeholder="Write your message..." style="width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;margin:6px 0 16px">
+            <button class="btn btn-primary" type="submit" data-ne="इमेलबाट पठाउनुहोस् ↗" data-en="Send by Email ↗">इमेलबाट पठाउनुहोस् ↗</button>
+            <p class="notice" data-ne="यो फारमले तपाईंको इमेल एप खोल्छ; वेबसाइटमा सन्देश भण्डारण गर्दैन।" data-en="This form opens your email app; it does not store messages on the website.">यो फारमले तपाईंको इमेल एप खोल्छ; वेबसाइटमा सन्देश भण्डारण गर्दैन।</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Student Help Nepal. <span data-ne="सबै अधिकार सुरक्षित।" data-en="All rights reserved.">सबै अधिकार सुरक्षित।</span></span><span data-ne="सिकौँ • अभ्यास गरौँ • सफल बनौँ" data-en="Learn • Practice • Succeed">सिकौँ • अभ्यास गरौँ • सफल बनौँ</span></div></footer>
+
+<script>
+  const resources = [
+    {grade:"6",type:"notes",icon:"📘",titleNe:"कक्षा ६ का विषयगत नोट्स",titleEn:"Grade 6 Subject Notes",descNe:"मुख्य विषयका पाठ र पुनरावृत्ति सामग्री।",descEn:"Lesson notes and revision materials for core subjects."},
+    {grade:"7",type:"notes",icon:"📗",titleNe:"कक्षा ७ का विषयगत नोट्स",titleEn:"Grade 7 Subject Notes",descNe:"अध्यायअनुसार व्यवस्थित अध्ययन सामग्री।",descEn:"Organized study materials by chapter."},
+    {grade:"8",type:"papers",icon:"📝",titleNe:"कक्षा ८ अभ्यास प्रश्नपत्र",titleEn:"Grade 8 Practice Papers",descNe:"परीक्षा अभ्यासका लागि नमुना प्रश्नहरू।",descEn:"Sample questions for exam practice."},
+    {grade:"9",type:"model",icon:"🎯",titleNe:"कक्षा ९ मोडेल प्रश्न",titleEn:"Grade 9 Model Questions",descNe:"आफ्नो तयारी जाँच्न अभ्यास गर्नुहोस्।",descEn:"Practice questions to check your preparation."},
+    {grade:"10",type:"see",icon:"🏆",titleNe:"SEE तयारी सामग्री",titleEn:"SEE Preparation Resources",descNe:"SEE का लागि अभ्यास र तयारी सामग्री।",descEn:"Practice and preparation resources for SEE."},
+    {grade:"11",type:"notes",icon:"💻",titleNe:"कक्षा ११ कम्प्युटर नोट्स",titleEn:"Grade 11 Computer Notes",descNe:"कम्प्युटर तथा प्रोग्रामिङका आधारभूत नोट्स।",descEn:"Foundational computer and programming notes."},
+    {grade:"12",type:"papers",icon:"📄",titleNe:"कक्षा १२ पुराना प्रश्नपत्र",titleEn:"Grade 12 Past Papers",descNe:"अघिल्ला परीक्षाका प्रश्नपत्र अभ्यास गर्नुहोस्।",descEn:"Practice with questions from previous exams."}
+  ];
+  let language = "ne", selectedGrade = "all";
+  const grid = document.getElementById("resourceGrid");
+  const search = document.getElementById("searchInput");
+  const typeFilter = document.getElementById("typeFilter");
+  const labels = {notes:{ne:"नोट्स",en:"Notes"},papers:{ne:"पुराना प्रश्नपत्र",en:"Past papers"},model:{ne:"मोडेल प्रश्न",en:"Model questions"},see:{ne:"SEE तयारी",en:"SEE preparation"}};
+
+  function renderResources(){
+    const q = search.value.trim().toLowerCase(), type = typeFilter.value;
+    const filtered = resources.filter(r => (selectedGrade==="all" || r.grade===selectedGrade) && (type==="all" || r.type===type) && (r.titleNe.toLowerCase().includes(q) || r.titleEn.toLowerCase().includes(q) || r.descNe.toLowerCase().includes(q) || r.descEn.toLowerCase().includes(q) || r.grade.includes(q)));
+    grid.innerHTML = filtered.length ? filtered.map(r => `
+      <article class="resource">
+        <div class="resource-icon">${r.icon}</div><span class="tag">${language==="ne"?"कक्षा":"Grade"} ${r.grade} · ${labels[r.type][language]}</span>
+        <h3>${language==="ne"?r.titleNe:r.titleEn}</h3>
+        <p>${language==="ne"?r.descNe:r.descEn}</p>
+        <a href="#contact">${language==="ne"?"सामग्रीका लागि सम्पर्क गर्नुहोस् →":"Contact us for resources →"}</a>
+      </article>`).join("") : `<div class="empty">${language==="ne"?"मिल्दो सामग्री भेटिएन। खोजी परिवर्तन गरेर फेरि प्रयास गर्नुहोस्।":"No matching resources found. Try another search."}</div>`;
+  }
+  function setLanguage(lang){
+    language=lang;document.documentElement.lang=lang;
+    document.querySelectorAll("[data-ne][data-en]").forEach(el=>{el.innerHTML=el.dataset[lang]});
+    document.getElementById("langBtn").textContent=lang==="ne"?"EN":"ने";
+    search.placeholder=lang==="ne"?"नोट्स वा विषय खोज्नुहोस्...":"Search notes or subjects...";
+    renderResources();
+  }
+  document.getElementById("langBtn").addEventListener("click",()=>setLanguage(language==="ne"?"en":"ne"));
+  document.querySelectorAll(".class-card").forEach(btn=>btn.addEventListener("click",()=>{
+    document.querySelectorAll(".class-card").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");selectedGrade=btn.dataset.grade;renderResources();
+    document.getElementById("resources").scrollIntoView({behavior:"smooth"});
+  }));
+  search.addEventListener("input",renderResources);typeFilter.addEventListener("change",renderResources);
+  document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("navlinks").classList.toggle("open"));
+  document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navlinks").classList.remove("open")));
+  document.getElementById("contactForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const name=document.getElementById("visitorName").value.trim();
+    const message=document.getElementById("visitorMessage").value.trim();
+    const subject=encodeURIComponent("Student Help Nepal - Website Message");
+    const body=encodeURIComponent("Name: "+name+"\n\nMessage: "+message);
+    window.location.href="mailto:rajendramahara101@gmail.com?subject="+subject+"&body="+body;
+  });
+  // Nepal clock and Bikram Sambat date
+  function updateNepalClock(){
+    const now=new Date();
+    const time=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kathmandu',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(now);
+    const ad=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kathmandu',weekday:'long',year:'numeric',month:'long',day:'numeric'}).format(now);
+    document.getElementById('nepalClock').textContent=time;
+    document.getElementById('englishDate').textContent=ad;
+    try{
+      const NepaliDateClass=window.NepaliDateConverter || window.NepaliDate;
+      if(NepaliDateClass){const bs=new NepaliDateClass(now);document.getElementById('nepaliDate').textContent=bs.format('ddd, DD MMMM YYYY','np');}
+      else document.getElementById('nepaliDate').textContent='नेपाली मिति देखाउन इन्टरनेट जडान आवश्यक छ';
+    }catch(err){document.getElementById('nepaliDate').textContent='नेपाली मिति लोड हुन सकेन';}
+  }
+  updateNepalClock();setInterval(updateNepalClock,1000);
+
+  // Safe basic calculator (no eval)
+  const calcDisplay=document.getElementById('calcDisplay');let calcExpr='';
+  function calculateExpression(expr){
+    const tokens=expr.match(/(?:\d+(?:\.\d*)?|\.\d+|[+*/%-])/g)||[];
+    if(tokens.join('')!==expr || !tokens.length) throw new Error('Invalid');
+    let values=[],ops=[],i=0;
+    const precedence=o=>(o==='+'||o==='-')?1:2;
+    while(i<tokens.length){
+      if(i%2===0){if(!/^\d*\.?\d+$/.test(tokens[i]))throw new Error('Invalid');values.push(Number(tokens[i]));}
+      else {if(!['+','-','*','/','%'].includes(tokens[i]))throw new Error('Invalid');ops.push(tokens[i]);}
+      i++;
+    }
+    for(let p=2;p>=1;p--){for(let j=0;j<ops.length;){if(precedence(ops[j])===p){const a=values[j],b=values[j+1],o=ops[j];let v=o==='*'?a*b:o==='/'?a/b:o==='%'?a%b:o==='+'?a+b:a-b;if(!Number.isFinite(v))throw new Error('Invalid');values.splice(j,2,v);ops.splice(j,1);}else j++;}}
+    return values[0];
+  }
+  document.querySelectorAll('.calc-keys button').forEach(btn=>btn.addEventListener('click',()=>{
+    const key=btn.dataset.key;
+    if(key==='C'){calcExpr='';calcDisplay.value='0';return;}
+    if(key==='back'){calcExpr=calcExpr.slice(0,-1);calcDisplay.value=calcExpr||'0';return;}
+    if(key==='='){try{calcExpr=String(calculateExpression(calcExpr));calcDisplay.value=calcExpr;}catch(e){calcDisplay.value='Error';calcExpr='';}return;}
+    if(/[+*/%-]/.test(key)&&calcExpr==='')return;
+    calcExpr+=key;calcDisplay.value=calcExpr;
+  }));
+
+  document.getElementById("year").textContent=new Date().getFullYear();
+  renderResources();
+</script>
+</body>
+</html>
